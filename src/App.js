@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {useState} from 'react'
 import UserDetails from './UserDetails'
 import Header from './components/Header'
+import './App.css'
 import {
   BrowserRouter as Router,
   Switch,

@@ -1,13 +1,13 @@
 import React from 'react'
 
 import TechnicalSkills from './TechnicalSkills'
-import './styles.css'
+import './Header.css'
 
-const  Header = (props) => {
+export default function Header (props) {
     
    const data =props.gree;
 
-    return (<div>
+    return (<div className="Header">
               
            <div className="mainpage">     
             <h1 style={{fontSize:'5vh'}}>{data["Name"]}</h1>
@@ -25,8 +25,8 @@ const  Header = (props) => {
                   </tr>
              </table>
              <div className="secoundpage">
-                <div class="grid-container">
-                         <div class="item1">
+                <div className="grid-container">
+                         <div className="item1">
                              <h1 style={{borderBottom: "3px solid black",fontWeight:"bold",fontSize:'2rem'}}>Education</h1>
                         <table>
                             <tr><td style={{width:"90%"}}>
@@ -76,7 +76,7 @@ const  Header = (props) => {
                              <TechnicalSkills gree = {data}/>
                          
                          </div>
-                         <div class="item2">
+                         <div className="item2">
                              <h1 style={{borderBottom: "3px solid black",fontWeight:"bold",fontSize:'2rem'}}>MSYS HR</h1>
                              <h1>Communication</h1><br></br>
                            <label>Feedback:</label><h3>{data["Communication"] === 5 ? "⭐⭐⭐⭐⭐":"⭐⭐⭐⭐"}</h3><hr/>
@@ -107,5 +107,3 @@ const  Header = (props) => {
 
     )
 }
-
-export default Header
