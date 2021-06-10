@@ -53,6 +53,8 @@ export default function UserDetails (props){
       <CustomInput val="skill-value-5" handleEvent={props.handleEvent}/>       
       <CustomInput val="skill-name-6" handleEvent={props.handleEvent}/>       
       <CustomInput val="skill-value-6" handleEvent={props.handleEvent}/>
+      <CustomInput val="skill-name-7" handleEvent={props.handleEvent}/>       
+      <CustomInput val="skill-value-7" handleEvent={props.handleEvent}/>
       <div className="text-center mb-5">
         <Link to='/resume'>
           <button type="button" className="btn btn-primary " onClick={()=>console.log(props.data)}>Submit</button>
