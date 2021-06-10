@@ -10,7 +10,7 @@ function CustomInput(props){
 
 
 export default function UserDetails (props){
-  console.log(props.updateImage)
+
   return (
     <div className="App mt-5">
       <CustomInput val="Name" handleEvent={props.handleEvent}/>
@@ -42,23 +42,17 @@ export default function UserDetails (props){
       <CustomInput val="soft-skill" handleEvent={props.handleEvent}/>      
       <CustomInput val="business-skill" handleEvent={props.handleEvent}/>   
       <span>Technical Skill</span> 
-      <CustomInput val="skill-name-1" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-1" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-name-2" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-2" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-name-3" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-3" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-name-4" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-4" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-name-5" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-5" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-name-6" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-6" handleEvent={props.handleEvent}/>
-      <CustomInput val="skill-name-7" handleEvent={props.handleEvent}/>       
-      <CustomInput val="skill-value-7" handleEvent={props.handleEvent}/>
+      <div className="input-group mb-3">
+          <span className="input-group-text">Skill-Names</span>
+          <textarea id="Skill-Names" className="form-control" onChange={props.handleEvent} rows="4"/>
+      </div>
+      <div className="input-group mb-3">
+        <span className="input-group-text">Skill-Values</span>
+        <textarea id="Skill-Values" className="form-control" onChange={props.handleEvent} rows="4"/>
+      </div>
       <div className="input-group mb-3">
         <input type="file" className="form-control" id="inputGroupFile02" onChange={(event)=> props.updateImage(event.target.files[0])} />
-        <label className="input-group-text" for="inputGroupFile02">Upload</label>
+        <label className="input-group-text" htmlFor="inputGroupFile02">Upload</label>
       </div>
       <div className="text-center mb-5">
         <Link to='/resume'>

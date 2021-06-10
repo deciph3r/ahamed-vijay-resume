@@ -13,7 +13,6 @@ import location from '../img/location.svg'
 function Rating({number}){
    number = (number>5) ? 5 : number;
    number = (number<1) ? 1 : number ;
-   console.log(number);
    const star = [];
    for(let i=0; i<5;i++){
       if(number !== 0) {
@@ -32,7 +31,6 @@ function Rating({number}){
 export default function Header (props) {
     
    const data =props.gree;
-   console.log(props.Image);
 
     return (<div className="Header">
               
