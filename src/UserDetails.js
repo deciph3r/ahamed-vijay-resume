@@ -19,15 +19,17 @@ export default function UserDetails (props){
       <CustomInput val="E-mail" handleEvent={props.handleEvent}/>
       <CustomInput val="Location" handleEvent={props.handleEvent}/>
       <span>Education</span>
-      <CustomInput val="Degree-1" handleEvent={props.handleEvent}/>
-      <CustomInput val="Degree-1-percentage" handleEvent={props.handleEvent}/>
-      <CustomInput val="Degree-2" handleEvent={props.handleEvent}/>
-      <CustomInput val="Degree-2-percentage" handleEvent={props.handleEvent}/>
+      <CustomInput val="SSLC-school" handleEvent={props.handleEvent}/>
+      <CustomInput val="SSLC-percentage" handleEvent={props.handleEvent}/>
+      <CustomInput val="SSLC-yop" handleEvent={props.handleEvent}/>
+      <CustomInput val="HSC-school" handleEvent={props.handleEvent}/>
+      <CustomInput val="HSC-percentage" handleEvent={props.handleEvent}/>
+      <CustomInput val="HSC-yop" handleEvent={props.handleEvent}/>
       <span>Msys HR</span>
       <CustomInput val="Communication" handleEvent={props.handleEvent}/>
       <CustomInput val="Competancy" handleEvent={props.handleEvent}/>
-      <CustomInput val="Situation Handeling" handleEvent={props.handleEvent}/>
-      <CustomInput val="Technical Skills" handleEvent={props.handleEvent}/>
+      <CustomInput val="Situation-Handeling" handleEvent={props.handleEvent}/>
+      <CustomInput val="Technical-Skills" handleEvent={props.handleEvent}/>
       <CustomInput val="Behavior" handleEvent={props.handleEvent}/>
       <span>OJT Performance</span>
       <CustomInput val="Project-Summary" handleEvent={props.handleEvent}/>
@@ -53,7 +55,7 @@ export default function UserDetails (props){
       <CustomInput val="skill-value-6" handleEvent={props.handleEvent}/>
       <div className="text-center mb-5">
         <Link to='/resume'>
-          <button type="button" className="btn btn-primary ">Submit</button>
+          <button type="button" className="btn btn-primary " onClick={()=>console.log(props.data)}>Submit</button>
         </Link>
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path='/'>
-          <UserDetails handleEvent={handleEvent}/>
+          <UserDetails data={user} handleEvent={handleEvent}/>
         </Route>
         <Route path='/resume'>
           <Header gree={user}/>

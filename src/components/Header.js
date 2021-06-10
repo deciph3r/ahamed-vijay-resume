@@ -1,12 +1,34 @@
 import React from 'react'
-
 import TechnicalSkills from './TechnicalSkills'
 import './Header.css'
+import full from '../img/rating-full.png';
+import zero from '../img/rating-zero.png';
+
+
+
+function Rating({number}){
+   number = (number>5) ? 5 : number;
+   number = (number<1) ? 1 : number ;
+   console.log(number);
+   const star = [];
+   for(let i=0; i<5;i++){
+      if(number !== 0) {
+         star.push((<img src={full} alt=""/>)); number--;
+      }
+      else star.push((<img src={zero} alt=""/>)) ;
+   }
+
+   return (
+      <div>
+         {star}
+      </div>
+   )
+};
 
 export default function Header (props) {
     
    const data =props.gree;
-
+   console.log(Number(data['Communication']));
     return (<div className="Header">
               
            <div className="mainpage">     
@@ -32,14 +54,14 @@ export default function Header (props) {
                             <tr><td style={{width:"90%"}}>
                          
                          <h1 style={{fontSize:"1.3rem"}}>Class X</h1>
-                         <h2 style={{color:'blue',fontSize:'1rem'}}>{data["Degree-1"]}</h2>
-                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data.duration10}</h3>
+                         <h2 style={{color:'blue',fontSize:'1rem'}}>{data["SSLC-school"]}</h2>
+                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['SSLC-yop']-1}-{data['SSLC-yop']}</h3>
                           </td>
                          <td>
                          <div className="Score" >
                              <h1 >Score</h1>
                              <br></br>
-                             <h1><span style={{color:"blue"}}>{data["Degree-1-percentage"]}</span>/100</h1>
+                             <h1><span style={{color:"blue"}}>{data["SSLC-percentage"]}</span>%</h1>
                          </div> 
                         </td>
                          </tr>
@@ -47,14 +69,14 @@ export default function Header (props) {
                         <tr>
                        <td>
                          <h1 style={{fontSize:"1.3rem"}}>Class XII</h1>
-                         <h2 style={{color:'blue',fontSize:'1rem'}}>{data['Degree-2']}</h2>
-                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data.duration12}</h3>
+                         <h2 style={{color:'blue',fontSize:'1rem'}}>{data['HSC-school']}</h2>
+                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['HSC-yop']-1}-{data['HSC-yop']}</h3>
                          </td>
                          <td>
                           <div className="Score">
                              <h1>GPA</h1>
                              <br></br>
-                             <h1><span style={{color:"blue"}}>{data["Degree-2-percentage"]}</span>/100</h1>
+                             <h1><span style={{color:"blue"}}>{data["HSC-percentage"]}</span>%</h1>
                             </div>
                             </td>
                             </tr>
@@ -79,15 +101,15 @@ export default function Header (props) {
                          <div className="item2">
                              <h1 style={{borderBottom: "3px solid black",fontWeight:"bold",fontSize:'2rem'}}>MSYS HR</h1>
                              <h1>Communication</h1><br></br>
-                           <label>Feedback:</label><h3>{data["Communication"] === 5 ? "⭐⭐⭐⭐⭐":"⭐⭐⭐⭐"}</h3><hr/>
+                           <label>Feedback:</label><Rating number={Number(data['Communication'])}/><hr/>
                             <h1>Competency</h1><br></br>
-                           <label>Feedback:</label><h3>{data["Competancy"] === 5 ? '⭐⭐⭐⭐⭐ ':data["Communication"] === 4 ? '⭐⭐⭐⭐': "⭐⭐⭐"}</h3><hr/>
+                           <label>Feedback:</label><Rating number={Number(data['Competancy'])}/><hr/>
                             <h1>Situation Handling</h1><br></br>
-                           <label>Feedback:</label><h3>{data.Communication = 5 ? '⭐⭐⭐⭐⭐ ': data.Communication =4 ? '⭐⭐⭐⭐': data.Communication = 3?"⭐⭐⭐" :data.Communication =2? '⭐⭐':'⭐'}</h3><hr/>
+                           <label>Feedback:</label><Rating number={Number(data['Situation-Handeling'])}/><hr/>
                             <h1>Technical Skills</h1><br></br>
-                           <label>Feedback:</label><h3>{data.Communication = 5 ? '⭐⭐⭐⭐⭐ ': data.Communication =4 ? '⭐⭐⭐⭐': data.Communication = 3?"⭐⭐⭐" :data.Communication =2? '⭐⭐':'⭐'}</h3><hr/>
+                           <label>Feedback:</label><Rating number={Number(data['Technical-Skills'])}/><hr/>
                             <h1>Behavior</h1><br></br>
-                           <label>Feedback:</label><h3>{data.Communication = 5 ? '⭐⭐⭐⭐⭐ ': data.Communication =4 ? '⭐⭐⭐⭐': data.Communication = 3?"⭐⭐⭐" :data.Communication =2? '⭐⭐':'⭐'}</h3><hr/>  
+                           <label>Feedback:</label><Rating number={Number(data['Behavior'])}/><hr/>  
 
                                  <h1 style={{borderBottom: "3px solid black",fontWeight:"bold",fontSize:'2rem'}}>OJT PERFORMANCE</h1>
                               <h1>Project Details</h1><br></br>
@@ -103,7 +125,5 @@ export default function Header (props) {
                  </div>
             </div>
             </div>
-
-
     )
 }
