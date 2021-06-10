@@ -3,6 +3,10 @@ import TechnicalSkills from './TechnicalSkills'
 import './Header.css'
 import full from '../img/rating-full.png';
 import zero from '../img/rating-zero.png';
+import phone from '../img/phone.svg'
+import link from '../img/link.svg'
+import mail from '../img/mail.svg'
+import location from '../img/location.svg'
 
 
 
@@ -38,12 +42,12 @@ export default function Header (props) {
              {/* <img src={data.image} alt="Profile"/> */}
              <table>
                 <tr>
-                   <td> <h6>✆ {data["Mobile"]}</h6></td>
-                   <td style={{paddingLeft:'5rem'}}> <h6>@ {data["E-mail"]}</h6></td>
+                   <td> <h6><img src={phone} alt=""/> {data["Mobile"]}</h6></td>
+                   <td style={{paddingLeft:'5rem'}}> <h6><img src={mail} alt=""/> {data["E-mail"]}</h6></td>
                  </tr>
                  <tr >
-                 <td><h6>🏢 {data["Company"]}</h6></td>
-                  <td style={{paddingLeft:'5rem'}}><h6>📍 {data["Location"]}</h6></td>
+                 <td><h6><img src={link} alt=""/> {data["Company"]}</h6></td>
+                  <td style={{paddingLeft:'5rem'}}><h6><img src={location} alt=""/> {data["Location"]}</h6></td>
                   </tr>
              </table>
              <div className="secoundpage">
