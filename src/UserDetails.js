@@ -10,6 +10,7 @@ function CustomInput(props){
 
 
 export default function UserDetails (props){
+  console.log(props.updateImage)
   return (
     <div className="App mt-5">
       <CustomInput val="Name" handleEvent={props.handleEvent}/>
@@ -55,6 +56,10 @@ export default function UserDetails (props){
       <CustomInput val="skill-value-6" handleEvent={props.handleEvent}/>
       <CustomInput val="skill-name-7" handleEvent={props.handleEvent}/>       
       <CustomInput val="skill-value-7" handleEvent={props.handleEvent}/>
+      <div className="input-group mb-3">
+        <input type="file" className="form-control" id="inputGroupFile02" onChange={(event)=> props.updateImage(event.target.files[0])} />
+        <label className="input-group-text" for="inputGroupFile02">Upload</label>
+      </div>
       <div className="text-center mb-5">
         <Link to='/resume'>
           <button type="button" className="btn btn-primary " onClick={()=>console.log(props.data)}>Submit</button>

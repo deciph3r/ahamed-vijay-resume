@@ -12,16 +12,21 @@ import {
 
 export default function App() {
   const [user, setUser] = useState({});
+  const [Image, setImage] =useState(null);
   const handleEvent = (e) => e.target.value&&setUser( {...user, [e.target.id]: e.target.value});
+  const updateImage =(file)=>{
+    setImage(file);
+    console.log(file);
+  }
 
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <UserDetails data={user} handleEvent={handleEvent}/>
+          <UserDetails data={user} updateImage={updateImage} handleEvent={handleEvent}/>
         </Route>
         <Route path='/resume'>
-          <Header gree={user}/>
+          <Header gree={user} Image={Image}/>
         </Route>
 
       </Switch>

@@ -32,14 +32,15 @@ function Rating({number}){
 export default function Header (props) {
     
    const data =props.gree;
-   console.log(Number(data['Communication']));
+   console.log(props.Image);
+
     return (<div className="Header">
               
            <div className="mainpage">     
             <h1 style={{fontSize:'5vh'}}>{data["Name"]}</h1>
             <h2 style={{color:"blue"}} >{data["Desiginition"]}</h2>
             
-             {/* <img src={data.image} alt="Profile"/> */}
+             <img id="user-dp"src={URL.createObjectURL(props.Image)} alt="Profile"/>
              <table>
                 <tr>
                    <td> <h6><img src={phone} alt=""/> {data["Mobile"]}</h6></td>
