@@ -92,15 +92,15 @@ export default function Header(props) {
                   <h1 style={{ borderBottom: "3px solid black", fontWeight: "bold", fontSize: '2rem' }}>TRAINING SCORE CARD</h1>
                   <div className="row">
                      <div className="col-6">
-                        <h2 style={{ color: "blue", fontSize: '1rem' }}> Behavioral </h2>
+                        <h2 style={{ color: "blue" }}> Behavioral </h2>
                         <input type="range" min="1" max="10" value={data["Behavioural-skill"]} readOnly />
                      </div>
                      <div className="col-6">
-                        <h2 style={{ color: "blue", fontSize: '1rem' }}> Soft Skills </h2>
+                        <h2 style={{ color: "blue" }}> Soft Skills </h2>
                         <input type="range" min="1" max="10" value={data["soft-skill"]} readOnly />
                      </div>
                      <div className="col-6">
-                        <h2 style={{ color: "blue", fontSize: '1rem' }}> Business Skills </h2>
+                        <h2 style={{ color: "blue" }}> Business Skills </h2>
                         <input type="range" min="1" max="10" value={data["business-skill"]} readOnly />
                      </div>
                   </div>
