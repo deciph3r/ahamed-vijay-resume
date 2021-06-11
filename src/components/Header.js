@@ -58,7 +58,7 @@ export default function Header (props) {
                          
                          <h1 style={{fontSize:"1.3rem"}}>Class X</h1>
                          <h2 style={{color:'blue',fontSize:'1rem'}}>{data["SSLC-school"]}</h2>
-                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['SSLC-yop']}</h3>
+                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{`${data["SSLC-yop"]-1}-${data["SSLC-yop"]}`}</h3>
                           </td>
                          <td>
                          <div className="Score" >
@@ -73,7 +73,7 @@ export default function Header (props) {
                        <td>
                          <h1 style={{fontSize:"1.3rem"}}>Class XII</h1>
                          <h2 style={{color:'blue',fontSize:'1rem'}}>{data['HSC-school']}</h2>
-                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['HSC-yop']}</h3>
+                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{`${data["HSC-yop"]-1}-${data["HSC-yop"]}`}</h3>
                          </td>
                          <td>
                           <div className="Score">
