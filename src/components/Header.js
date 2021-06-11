@@ -13,6 +13,7 @@ import location from '../img/location.svg'
 function Rating({number}){
    number = (number>5) ? 5 : number;
    number = (number<1) ? 1 : number ;
+   console.log(number);
    const star = [];
    for(let i=0; i<5;i++){
       if(number !== 0) {
@@ -31,21 +32,22 @@ function Rating({number}){
 export default function Header (props) {
     
    const data =props.gree;
+   console.log(props.Image);
 
     return (<div className="Header">
               
            <div className="mainpage">     
-            <h1 style={{fontSize:'5vh'}}>{data["Name"]}</h1>
-            <h2 style={{color:"blue"}} >{data["Desiginition"]}</h2>
+            <h1 style={{fontSize:'6vh',marginLeft:"1.8em"}}>{data["Name"]}</h1>
+            <h2 style={{color:"blue",marginLeft:"3em"}} >{data["Desiginition"]}</h2>
             
-             <img id="user-dp"src={URL.createObjectURL(props.Image)} alt="Profile"/>
+             {(props.Image)&&<img id="user-dp"src={URL.createObjectURL(props.Image)} alt="Profile"/>}
              <table>
                 <tr>
-                   <td> <h6><img src={phone} alt=""/> {data["Mobile"]}</h6></td>
+                   <td> <h6 style={{marginLeft:"5.6em"}}><img src={phone} alt=""/> {data["Mobile"]}</h6></td>
                    <td style={{paddingLeft:'5rem'}}> <h6><img src={mail} alt=""/> {data["E-mail"]}</h6></td>
                  </tr>
                  <tr >
-                 <td><h6><img src={link} alt=""/> {data["Company"]}</h6></td>
+                 <td><h6 style={{marginLeft:"5.6em"}}><img src={link} alt=""/> {data["Company"]}</h6></td>
                   <td style={{paddingLeft:'5rem'}}><h6><img src={location} alt=""/> {data["Location"]}</h6></td>
                   </tr>
              </table>
@@ -58,7 +60,7 @@ export default function Header (props) {
                          
                          <h1 style={{fontSize:"1.3rem"}}>Class X</h1>
                          <h2 style={{color:'blue',fontSize:'1rem'}}>{data["SSLC-school"]}</h2>
-                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['SSLC-yop']-1}-{data['SSLC-yop']}</h3>
+                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['SSLC-yop']}</h3>
                           </td>
                          <td>
                          <div className="Score" >
@@ -73,7 +75,7 @@ export default function Header (props) {
                        <td>
                          <h1 style={{fontSize:"1.3rem"}}>Class XII</h1>
                          <h2 style={{color:'blue',fontSize:'1rem'}}>{data['HSC-school']}</h2>
-                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['HSC-yop']-1}-{data['HSC-yop']}</h3>
+                         <h3 style={{fontSize:"0.6rem",color:"gray"}}>{data['HSC-yop']}</h3>
                          </td>
                          <td>
                           <div className="Score">
@@ -126,6 +128,9 @@ export default function Header (props) {
                          </div>
                 </div>
                  </div>
+            </div>
+            <div className="emptyspace">
+
             </div>
             </div>
     )
