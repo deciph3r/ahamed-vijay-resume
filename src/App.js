@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {useState} from 'react'
+import { useState } from 'react'
 import UserDetails from './UserDetails'
 import Header from './components/Header'
 import './App.css'
@@ -12,9 +12,9 @@ import {
 
 export default function App() {
   const [user, setUser] = useState({});
-  const [Image, setImage] =useState(null);
-  const handleEvent = (e) => e.target.value&&setUser( {...user, [e.target.id]: e.target.value});
-  const updateImage =(file)=>{
+  const [Image, setImage] = useState(null);
+  const handleEvent = (e) => e.target.value && setUser({ ...user, [e.target.id]: e.target.value });
+  const updateImage = (file) => {
     setImage(file);
   }
 
@@ -22,10 +22,10 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path='/'>
-          <UserDetails data={user} updateImage={updateImage} handleEvent={handleEvent}/>
+          <UserDetails data={user} updateImage={updateImage} handleEvent={handleEvent} />
         </Route>
         <Route path='/resume'>
-          <Header gree={user} Image={Image}/>
+          <Header gree={user} Image={Image} />
         </Route>
 
       </Switch>
