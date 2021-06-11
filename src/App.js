@@ -16,7 +16,6 @@ export default function App() {
   const handleEvent = (e) => e.target.value&&setUser( {...user, [e.target.id]: e.target.value});
   const updateImage =(file)=>{
     setImage(file);
-    console.log(file);
   }
 
   return (

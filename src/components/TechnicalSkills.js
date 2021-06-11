@@ -1,7 +1,7 @@
 export default function TechnicalSkills(props) {
     const data = props.gree;
-    const SkillNames=data["Skill-Names"].split(",");
-    const SkillValues=data["Skill-Values"].split(",");
+    const SkillNames= (data["Skill-Names"]) ? data["Skill-Values"].split(",") : [];
+    const SkillValues= (data["Skill-Values"]) ? data["Skill-Values"].split(",") : [];
    
     const res=[];
 

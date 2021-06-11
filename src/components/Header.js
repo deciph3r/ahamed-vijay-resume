@@ -13,7 +13,6 @@ import location from '../img/location.svg'
 function Rating({number}){
    number = (number>5) ? 5 : number;
    number = (number<1) ? 1 : number ;
-   console.log(number);
    const star = [];
    for(let i=0; i<5;i++){
       if(number !== 0) {
@@ -32,7 +31,6 @@ function Rating({number}){
 export default function Header (props) {
     
    const data =props.gree;
-   console.log(props.Image);
 
     return (<div className="Header">
               
@@ -86,19 +84,22 @@ export default function Header (props) {
                             </td>
                             </tr>
                          </table>
-                         {/* Tarining Score Card */}
+            
                          <h1 style={{borderBottom: "3px solid black",fontWeight:"bold",fontSize:'2rem'}}>TRAINING SCORE CARD</h1>
-                             <table><tr>
-                             <td><h2 style={{color:"blue",fontSize:'1rem'}}>Behavioral</h2>
-                             <input type="range" min="1" max="10" value={data["Behavioural-skill"]}></input></td>
-                             
-                             <td><h2  style={{color:"blue",fontSize:'1rem'}}>Soft Skills</h2>
-                             <input type="range" min="1" max="10" value={data["soft-skill"]}></input></td>
-                              
-                             </tr>
-                             <h2  style={{color:"blue",fontSize:'1rem'}}>Business Skills</h2>
-                             <input type="range" min="1" max="10" value={data['business-skill']}></input>
-                             </table>
+                             <div className="row">
+                                <div className ="col-6">
+                                   <h2 style={{color:"blue",fontSize:'1rem'}}> Behavioral </h2>
+                                   <input type="range" min="1" max="10" value={data["Behavioural-skill"]} readOnly/>
+                                </div>
+                                <div className ="col-6">
+                                   <h2 style={{color:"blue",fontSize:'1rem'}}> Soft Skills </h2>
+                                   <input type="range" min="1" max="10" value={data["soft-skill"]} readOnly/>
+                                </div>
+                                <div className ="col-6">
+                                   <h2 style={{color:"blue",fontSize:'1rem'}}> Business Skills </h2>
+                                   <input type="range" min="1" max="10" value={data["business-skill"]} readOnly/>
+                                </div>
+                              </div>
                               <h1 style={{borderBottom: "3px solid black",fontWeight:"bold",fontSize:'2rem'}}>TECHNICAL SKILLS</h1> 
                              <TechnicalSkills gree = {data}/>
                          

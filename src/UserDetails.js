@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 function CustomInput(props){
   return (
     <div className="input-group mb-3">
-      <span className="input-group-text">{props.val}</span>
+      <span className="input-group-text">{props.spantext || props.val}</span>
       <input type="text" id={props.val} className="form-control" onChange={props.handleEvent}/>
     </div>
   )
@@ -20,12 +20,12 @@ export default function UserDetails (props){
       <CustomInput val="E-mail" handleEvent={props.handleEvent}/>
       <CustomInput val="Location" handleEvent={props.handleEvent}/>
       <span>Education</span>
-      <CustomInput val="SSLC-school" handleEvent={props.handleEvent}/>
-      <CustomInput val="SSLC-percentage" handleEvent={props.handleEvent}/>
-      <CustomInput val="SSLC-yop" handleEvent={props.handleEvent}/>
-      <CustomInput val="HSC-school" handleEvent={props.handleEvent}/>
-      <CustomInput val="HSC-percentage" handleEvent={props.handleEvent}/>
-      <CustomInput val="HSC-yop" handleEvent={props.handleEvent}/>
+      <CustomInput val="SSLC-school" spantext="CLASS-X-School" handleEvent={props.handleEvent}/>
+      <CustomInput val="SSLC-percentage" spantext="CLASS-X-Percentage" handleEvent={props.handleEvent}/>
+      <CustomInput val="SSLC-yop" spantext="CLASS-X-Year-Of-Passing" handleEvent={props.handleEvent}/>
+      <CustomInput val="HSC-school" spantext="CLASS-XII-School" handleEvent={props.handleEvent}/>
+      <CustomInput val="HSC-percentage" spantext="CLASS-XII-Percentage" handleEvent={props.handleEvent}/>
+      <CustomInput val="HSC-yop" spantext="CLASS-XII-Year-Of-Passing" handleEvent={props.handleEvent}/>
       <span>Msys HR</span>
       <CustomInput val="Communication" handleEvent={props.handleEvent}/>
       <CustomInput val="Competancy" handleEvent={props.handleEvent}/>
