@@ -16,9 +16,9 @@ function Rating({ number }) {
    const star = [];
    for (let i = 0; i < 5; i++) {
       if (number !== 0) {
-         star.push((<img src={full} alt="" />)); number--;
+         star.push((<img src={full} key={i} alt="" />)); number--;
       }
-      else star.push((<img src={zero} alt="" />));
+      else star.push((<img src={zero} key={i} alt="" />));
    }
 
    return (
@@ -35,54 +35,58 @@ export default function Header(props) {
    return (<div className="Header">
 
       <div className="mainpage">
-         <h1 style={{ fontSize: '6vh', marginLeft: "1.8em" }}>{data["Name"]}</h1>
-         <h2 style={{ color: "blue", marginLeft: "3em" }} >{data["Desiginition"]}</h2>
+         <h1 style={{ fontSize: '6vh', marginLeft: "76px" }}>{data["Name"]}</h1>
+         <h2 style={{ color: "blue", marginLeft: "76px" }} >{data["Desiginition"]}</h2>
 
          {(props.Image) && <img id="user-dp" src={URL.createObjectURL(props.Image)} alt="Profile" />}
          <table>
-            <tr>
-               <td> <h6 style={{ marginLeft: "5.6em" }}><img src={phone} alt="" /> {data["Mobile"]}</h6></td>
-               <td style={{ paddingLeft: '5rem' }}> <h6><img src={mail} alt="" /> {data["E-mail"]}</h6></td>
-            </tr>
-            <tr >
-               <td><h6 style={{ marginLeft: "5.6em" }}><img src={link} alt="" /> {data["Company"]}</h6></td>
-               <td style={{ paddingLeft: '5rem' }}><h6><img src={location} alt="" /> {data["Location"]}</h6></td>
-            </tr>
+            <tbody>
+               <tr>
+                  <td> <h6 style={{ marginLeft: "5.6em" }}><img src={phone} alt="" /> {data["Mobile"]}</h6></td>
+                  <td style={{ paddingLeft: '5rem' }}> <h6><img src={mail} alt="" /> {data["E-mail"]}</h6></td>
+               </tr>
+               <tr >
+                  <td><h6 style={{ marginLeft: "5.6em" }}><img src={link} alt="" /> {data["Company"]}</h6></td>
+                  <td style={{ paddingLeft: '5rem' }}><h6><img src={location} alt="" /> {data["Location"]}</h6></td>
+               </tr>
+            </tbody>
          </table>
          <div className="secoundpage">
             <div className="grid-container">
                <div className="item1">
                   <h1 style={{ borderBottom: "3px solid black", fontWeight: "bold", fontSize: '2rem' }}>Education</h1>
                   <table>
-                     <tr><td style={{ width: "90%" }}>
+                     <tbody>
+                        <tr style={{ borderBottom: 'solid black 1px' }}>
+                           <td style={{ width: "90%" }}>
+                              <h1 style={{ fontSize: "1.3rem" }}>Class X</h1>
+                              <h2 style={{ color: 'blue', fontSize: '1rem' }}>{data["SSLC-school"]}</h2>
+                              <h3 style={{ fontSize: "0.6rem", color: "gray" }}>{`${data["SSLC-yop"] - 1}-${data["SSLC-yop"]}`}</h3>
+                           </td>
+                           <td>
+                              <div className="Score" >
+                                 <h1 >Score</h1>
+                                 <br></br>
+                                 <h1><span style={{ color: "blue" }}>{data["SSLC-percentage"]}</span>%</h1>
+                              </div>
+                           </td>
+                        </tr>
 
-                        <h1 style={{ fontSize: "1.3rem" }}>Class X</h1>
-                        <h2 style={{ color: 'blue', fontSize: '1rem' }}>{data["SSLC-school"]}</h2>
-                        <h3 style={{ fontSize: "0.6rem", color: "gray" }}>{`${data["SSLC-yop"] - 1}-${data["SSLC-yop"]}`}</h3>
-                     </td>
-                        <td>
-                           <div className="Score" >
-                              <h1 >Score</h1>
-                              <br></br>
-                              <h1><span style={{ color: "blue" }}>{data["SSLC-percentage"]}</span>%</h1>
-                           </div>
-                        </td>
-                     </tr>
-                     <hr></hr>
-                     <tr>
-                        <td>
-                           <h1 style={{ fontSize: "1.3rem" }}>Class XII</h1>
-                           <h2 style={{ color: 'blue', fontSize: '1rem' }}>{data['HSC-school']}</h2>
-                           <h3 style={{ fontSize: "0.6rem", color: "gray" }}>{`${data["HSC-yop"] - 1}-${data["HSC-yop"]}`}</h3>
-                        </td>
-                        <td>
-                           <div className="Score">
-                              <h1>GPA</h1>
-                              <br></br>
-                              <h1><span style={{ color: "blue" }}>{data["HSC-percentage"]}</span>%</h1>
-                           </div>
-                        </td>
-                     </tr>
+                        <tr>
+                           <td>
+                              <h1 style={{ fontSize: "1.3rem" }}>Class XII</h1>
+                              <h2 style={{ color: 'blue', fontSize: '1rem' }}>{data['HSC-school']}</h2>
+                              <h3 style={{ fontSize: "0.6rem", color: "gray" }}>{`${data["HSC-yop"] - 1}-${data["HSC-yop"]}`}</h3>
+                           </td>
+                           <td>
+                              <div className="Score">
+                                 <h1>GPA</h1>
+                                 <br></br>
+                                 <h1><span style={{ color: "blue" }}>{data["HSC-percentage"]}</span>%</h1>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
                   </table>
 
                   <h1 style={{ borderBottom: "3px solid black", fontWeight: "bold", fontSize: '2rem' }}>TRAINING SCORE CARD</h1>

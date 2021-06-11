@@ -9,7 +9,7 @@ export default function TechnicalSkills(props) {
       res.push((
          <div className="col-6">
             <h1>{SkillNames[i]}</h1>
-            <input type="range" min="1" max="10" value={SkillValues[i]}></input>
+            <input type="range" min="1" max="10" value={SkillValues[i]} readOnly />
          </div>
       ))
    }
