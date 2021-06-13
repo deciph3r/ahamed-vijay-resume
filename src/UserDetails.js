@@ -49,7 +49,7 @@ export default function UserDetails(props) {
       <CustomInput val="business-skill" handleEvent={props.handleEvent} />
       <span>Technical Skill</span>
       <div className="form-group">
-        <small className="form-text text-muted">Accepted values 1-10</small>
+        <small className="form-text text-muted">Accepted values 1-10 for skill values</small>
       </div>
       <div className="form-group mb-3">
         <div className="input-group">
