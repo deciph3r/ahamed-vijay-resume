@@ -27,6 +27,9 @@ export default function UserDetails(props) {
       <CustomInput val="HSC-percentage" spantext="CLASS-XII-Percentage" handleEvent={props.handleEvent} />
       <CustomInput val="HSC-yop" spantext="CLASS-XII-Year-Of-Passing" handleEvent={props.handleEvent} />
       <span>Msys HR</span>
+      <div className="form-group">
+        <small className="form-text text-muted">Accepted values 1-5</small>
+      </div>
       <CustomInput val="Communication" handleEvent={props.handleEvent} />
       <CustomInput val="Competancy" handleEvent={props.handleEvent} />
       <CustomInput val="Situation-Handeling" handleEvent={props.handleEvent} />
@@ -38,17 +41,29 @@ export default function UserDetails(props) {
       <CustomInput val="Manager's-Comment" handleEvent={props.handleEvent} />
       <CustomInput val="Peers-Comment" handleEvent={props.handleEvent} />
       <span>Training Scorecard</span>
+      <div className="form-group">
+        <small className="form-text text-muted">Accepted values 1-10</small>
+      </div>
       <CustomInput val="Behavioural-skill" handleEvent={props.handleEvent} />
       <CustomInput val="soft-skill" handleEvent={props.handleEvent} />
       <CustomInput val="business-skill" handleEvent={props.handleEvent} />
       <span>Technical Skill</span>
-      <div className="input-group mb-3">
-        <span className="input-group-text">Skill-Names</span>
-        <textarea id="Skill-Names" className="form-control" onChange={props.handleEvent} rows="4" />
+      <div className="form-group">
+        <small className="form-text text-muted">Accepted values 1-10</small>
       </div>
-      <div className="input-group mb-3">
-        <span className="input-group-text">Skill-Values</span>
-        <textarea id="Skill-Values" className="form-control" onChange={props.handleEvent} rows="4" />
+      <div className="form-group mb-3">
+        <div className="input-group">
+          <span className="input-group-text">Skill-Names</span>
+          <textarea id="Skill-Names" className="form-control" onChange={props.handleEvent} rows="4" />
+        </div>
+        <small className="form-text text-muted">All skill names should be seperated by ','. eg. "HTML,CSS,JS,React,NodeJS,Mongo,Express,MERN"</small>
+      </div>
+      <div className="form-group mb-3">
+        <div className="input-group">
+          <span className="input-group-text">Skill-Values</span>
+          <textarea id="Skill-Values" className="form-control" onChange={props.handleEvent} rows="4" />
+        </div>
+        <small className="form-text text-muted">All skill values should be seperated by ','. eg. "1,2,3,4,5,6,7,8"</small>
       </div>
       <div className="input-group mb-3">
         <input type="file" className="form-control" id="inputGroupFile02" onChange={(event) => props.updateImage(event.target.files[0])} />
